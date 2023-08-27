@@ -1,12 +1,17 @@
 import React from "react";
 import "./Task.css";
 import bb from "../Static/b.svg";
-import heart from "../Static/heart.png";
 import ww from "../Static/ww.png";
+import { data, tags, profeatures, features, categories, specialfeatures1,specialfeatures2 } from "./data";
+
+import { FaCheck, FaShoppingCart, FaInfoCircle, FaCloudDownloadAlt } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
 
 const Task = () => {
+
   return (
     <>
+
       <div className="headerrr">
         <div className="headerL">
           <img src={bb} alt="" />
@@ -19,10 +24,18 @@ const Task = () => {
                 <li>
                   <select name="" id="">
                     <option value="">Templates</option>
+                    <option value="">Templates</option>
+                    <option value="">Templates</option>
+                    <option value="">Templates</option>
+                    <option value="">Templates</option>
                   </select>
                 </li>
                 <li>
                   <select name="" id="">
+                    <option value="">Components</option>
+                    <option value="">Components</option>
+                    <option value="">Components</option>
+                    <option value="">Components</option>
                     <option value="">Components</option>
                   </select>
                 </li>
@@ -108,7 +121,7 @@ const Task = () => {
           <br />
 
           <button className="btn1" type="button">
-            <span style={{ marginRight: "5px" }}>&#x1F441; </span>Preview
+            <span id="bt1-span" >&#x1F441; </span>Preview
           </button>
           <button className="btn2" type="button">
             <span>&#128722;</span>Pricing
@@ -132,7 +145,7 @@ const Task = () => {
         </div>
         <div>
           <h4>Changelog</h4>
-          <p style={{ color: "blue" }}>view</p>
+          <p ><a href="">view</a></p>
         </div>
         <div>
           <h4>Framework</h4>
@@ -143,40 +156,28 @@ const Task = () => {
       <div className="middle33">
         <div className="middle331">
           <div className="middle3311">
-            <h2 style={{ paddingLeft: "60px" }}>Highlights</h2>
+            <h2 id="middle3311h2" >Highlights</h2>
           </div>
 
           <div className="middle3312">
-            <p style={{ fontSize: "20px" }}>Features</p>
+            <p id="middlep" >Features</p>
 
             <div className="divs">
               <ul>
-                <li>Bootstrap5</li>
-                <li>BSB Framework</li>
-                <li>HTML5 and CSS3</li>
-                <li>Responsive Layout</li>
-                <li>Singlr Page Design</li>
-                <li>W3C valid</li>
-                <li>Clean and Commented Code</li>
-                <li>SEO Optinized</li>
-                <li>Cross Browser Compatible</li>
+              {features.map((e1) => (
+                <li >{e1}</li>
+              ))}
               </ul>
             </div>
           </div>
 
           <div className="middle3313">
-            <p style={{ fontSize: "20px" }}>Pro Features</p>
-
+            <p id="middlep" >Pro Features</p>
             <div className="divs">
               <ul>
-                <li>Pro Components</li>
-                <li>Mouse Interactive Headres</li>
-                <li>PHP/Ajex Contact Form Script</li>
-                <li>SAAS/SCSS Sources Files</li>
-                <li>Premium Support via Email </li>
-                <li>Forum Support</li>
-                <li>Create Websites for Clients</li>
-                <li>White Lable Footer - No Credits</li>
+                {profeatures.map((e) => (
+                <li >{e}</li>
+              ))}
               </ul>
             </div>
           </div>
@@ -193,16 +194,16 @@ const Task = () => {
           <div className="middle421">
             <div>
               <ul>
-                <li>Mouse Interactive Header</li>
-                <li>Blog carousel</li>
-                <li>Fact counter</li>
+              {specialfeatures1.map((e) => (
+                <li >{e}</li>
+              ))}
               </ul>
             </div>
             <div>
               <ul>
-                <li>Mouse Interactive Header</li>
-                <li>Blog carousel</li>
-                <li>Fact counter</li>
+              {specialfeatures2.map((e) => (
+                <li >{e}</li>
+              ))}
               </ul>
             </div>
           </div>
@@ -215,26 +216,29 @@ const Task = () => {
         </div>
         <div className="middle52">
           <div className="middle521">
-            <div style={{ height: "300px" }}>
+            <div id="middle521a" >
               <h2>Category</h2>
-              <div style={{ height: "200px" }}>
-                <p>
-                  Agency, Blog, Business, Consulting, Corporate, Creative,
-                  Finance, Landing Page, Marketing, Pro, Small Business, Startup
-                </p>
+              <div id="middle521b">
+              <p>
+                  {categories.map((item2) => (
+                    <li id="tagspli" >{item2} <span>,</span> </li>
+                  ))}</p>
               </div>
             </div>
             <div>
               <h2>Tags</h2>
+
               <div>
+
                 <p>
-                  Agency, Blog, Business, Consulting, Corporate, Creative,
-                  Finance, Landing Page, Marketing, Pro, Small Business, Startup
-                  Blog, Business, Consulting, Blog, Business, Consulting,
-                  Corporate, Creative, Finance, Consulting, Corporate,
-                  Creative,Consulting, Corporate, Creative,
-                </p>
+                  {tags.map((item2) => (
+                    <li id="tagspli" >{item2} <span>,</span> </li>
+                  ))}</p>
+
+
               </div>
+
+
             </div>
           </div>
         </div>
@@ -244,150 +248,92 @@ const Task = () => {
 
         <div>
           <table id="alter">
-            <tr >
+            <tr>
               <td id="tdfirst"></td>
               <td id="tds">
                 <div id="div1">
-                  <h1>Free </h1>
+                  <h1>Free</h1>
                   <p>personal</p>
                 </div>
-                <h1 style={{fontSize:"70px" , fontWeight:"bold"}} >$<span style={{verticalAlign:"sub"}}>0</span></h1>
+                <h1 id="middletablefirst"  >$<span >0</span></h1>
                 <div id="div2">
                   <p>Lifetime access</p>
                 </div>
               </td>
               <td id="tds">
                 <div id="div1">
-                <h1>Pro </h1>
+                  <h1>Pro </h1>
                   <p>Developer</p>
                 </div>
-                <h1 style={{fontSize:"70px" , fontWeight:"bold"}} >$<span style={{verticalAlign:"sub"}}>29</span></h1>
-                
+                <h1 id="middletablefirst"  >$<span >29</span></h1>
+
                 <div id="div2">
-                <p style={{width:"100px", marginLeft:"70px"}}><span>12</span> Months Access Single Domain</p>
+                  <p id="div2p" ><span>12</span> Months Access Single Domain</p>
                 </div>
               </td>
               <td id="tds">
                 <div id="div1">
-                <h1>BB Startup </h1>
+                  <h1>BB Startup </h1>
                   <p>Freelancer</p>
                 </div>
-                <h1 style={{fontSize:"70px" , fontWeight:"bold"}} >$<span style={{verticalAlign:"sub"}}>49</span></h1>
+                <h1 id="middletablefirst"  >$<span >49</span></h1>
 
                 <div id="div2">
-                <p><span>3</span>Mpnths Access</p>
-                <p><span>4</span> Pro BS Templates</p>
-                <p><span>27</span>Pro BS Components</p>
+                  <p><span>3 </span>Months Access</p>
+                  <p><span>4 </span> Pro BS Templates</p>
+                  <p><span>27 </span>Pro BS Components</p>
                 </div>
               </td>
               <td id="tds">
                 <div id="div1">
-                <h1>BB Club </h1>
+                  <h1>BB Club </h1>
                   <p>agency</p>
                 </div>
-                <h1 style={{fontSize:"70px" , fontWeight:"bold"}} >$<span style={{verticalAlign:"sub"}}>149</span></h1>
+                <h1 id="middletablefirst"  >$<span >149</span></h1>
                 <div id="div2">
-                <p><span>12</span>Mpnths Access</p>
-                <p><span>4</span> Pro BS Templates</p>
-                <p><span>27</span>Pro BS Components</p>
+                  <p><span>12 </span>Months Access</p>
+                  <p><span>4 </span> Pro BS Templates</p>
+                  <p><span>27 </span>Pro BS Components</p>
                 </div>
               </td>
             </tr>
-            <tr>
-              <td>Harry Depp</td>
-              <td>Harry Depp</td>
-              <td>Britain</td>
-              <td>Britain</td>
-              <td>Britain</td>
-            </tr>
-            <tr>
-              <td>Harry Depp</td>
-              <td>Harry Depp</td>
-              <td>Britain</td>
-              <td>Britain</td>
-              <td>Britain</td>
-            </tr>
-            <tr>
-              <td>Harry Depp</td>
-              <td>Harry Depp</td>
-              <td>Britain</td>
-              <td>Britain</td>
-              <td>Britain</td>
-            </tr>
-            <tr>
-              <td>Harry Depp</td>
-              <td>Harry Depp</td>
-              <td>Britain</td>
-              <td>Britain</td>
-              <td>Britain</td>
-            </tr>
-            <tr>
-              <td>Harry Depp</td>
-              <td>Harry Depp</td>
-              <td>Britain</td>
-              <td>Britain</td>
-              <td>Britain</td>
-            </tr>
-            <tr>
-              <td>Harry Depp</td>
-              <td>Harry Depp</td>
-              <td>Britain</td>
-              <td>Britain</td>
-              <td>Britain</td>
-            </tr>
-            <tr>
-              <td>Harry Depp</td>
-              <td>Harry Depp</td>
-              <td>Britain</td>
-              <td>Britain</td>
-              <td>Britain</td>
-            </tr>
-            <tr>
-              <td>Harry Depp</td>
-              <td>Harry Depp</td>
-              <td>Britain</td>
-              <td>Britain</td>
-              <td>Britain</td>
-            </tr>
-            <tr>
-              <td>Harry Depp</td>
-              <td>Harry Depp</td>
-              <td>Britain</td>
-              <td>Britain</td>
-              <td>Britain</td>
-            </tr>
-            <tr>
-              <td>Harry Depp</td>
-              <td>Harry Depp</td>
-              <td>Britain</td>
-              <td>Britain</td>
-              <td>Britain</td>
-            </tr>
-            <tr>
-              <td>Harry Depp</td>
-              <td>Harry Depp</td>
-              <td>Britain</td>
-              <td>Britain</td>
-              <td>Britain</td>
-            </tr>
-            <tr>
-              <td style={{ backgroundColor: "rgb(232, 236, 238)" }}></td>
-              <td style={{ height: "90px",backgroundColor:"#85c0ff" }}>
-
-                <button className="buttond" style={{backgroundColor:"rgb(16, 189, 16)"}}>Free Download</button>
 
 
-              </td>
-              <td style={{ height: "90px",backgroundColor:"#85c0ff" }}>
-                <button className="buttond">Buy Now</button>
-              </td>
-              <td style={{ height: "90px",backgroundColor:"#85c0ff" }}>
-                <button className="buttond">Buy Now</button>
-              </td>
-              <td style={{ height: "90px",backgroundColor:"#85c0ff" }}>
-                <button className="buttond">Buy Now</button>
-              </td>
-            </tr>
+
+
+
+            {data.map((item) => (
+
+              <tr >
+                <td id="secrowtd">{item.name} <span id="itemNamespan"><FaInfoCircle /></span> </td>
+                <td>{item.free ? <span><FaCheck id="facheck" /></span> : <span><ImCross id="crossIcon" /></span>}</td>
+                <td>{item.pro ? <span><FaCheck id="facheck" /></span> : <span><ImCross id="crossIcon" /></span>}</td>
+                <td>{item.startup ? <span><FaCheck id="facheck" /></span> : <span><ImCross id="crossIcon" /></span>}</td>
+                <td>{item.club ? <span><FaCheck id="facheck" /></span> : <span><ImCross id="crossIcon" /></span>}</td>
+              </tr>
+            ))}
+
+            <td id="tdfirst" ></td>
+            <td id="buttonback1">
+
+              <button type="submit" className="buttond firstbutton" >
+                <span > < FaCloudDownloadAlt /></span>
+                Free Download
+              </button>
+
+
+            </td>
+
+            <td id="buttonback1">
+              <button type="submit" className="buttond">  <span><FaShoppingCart /></span> Buy Now</button>
+            </td>
+            <td id="buttonback1">
+              <button type="submit" className="buttond">  <span><FaShoppingCart /></span> Buy Now</button>
+            </td>
+            <td id="buttonback1">
+              <button type="submit" className="buttond">  <span><FaShoppingCart /></span> Buy Now</button>
+            </td>
+
 
           </table>
         </div>
@@ -395,7 +341,7 @@ const Task = () => {
 
 
 
-      </div>
+      </div >
     </>
   );
 };
